@@ -38,9 +38,7 @@ def home():
 def result():
     score = 0
     results = []
-    percentage = (score / len(questions)) * 100
-    percentage=percentage
-
+    
     for index, question in enumerate(questions):
         user_answer = request.form.get(f"q{index}")
 
