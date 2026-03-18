@@ -39,9 +39,9 @@ def result():
     score = 0
     results = []
 
-    for i, question in enumerate(questions):
-        user_answer = request.form.get(f"q{i}")
-
+    for index, question in enumerate(questions):
+        user_answer = request.form.get(f"q{index}")
+        
         if question.is_correct(user_answer):
             score += 1
 
