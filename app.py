@@ -25,7 +25,8 @@ questions = [
     Question("Which organ pumps blood?", ["A. Brain", "B. Liver", "C. Heart", "D. Kidney"], "C. Heart"),
     Question("Sun rises in the?", ["A. West", "B. North", "C. South", "D. East"], "D. East"),
     Question("Color of the sky?", ["A. Blue", "B. Red", "C. Green", "D. Yellow"], "A. Blue"),
-Question("5 x 5?", ["A. 20", "B. 25", "C. 30", "D. 15"], "B. 25")
+Question("5 x 5?", ["A. 20", "B. 25", "C. 30", "D. 15"], "B. 25"),
+Question("Which is an operating system?", ["A. Windows", "B. Google", "C. Facebook", "D. WhatsApp"], "A. Windows"),
 ]
 
 @app.route("/")
