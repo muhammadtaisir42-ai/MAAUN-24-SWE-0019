@@ -23,6 +23,7 @@ questions = [
     Question("Which organ pumps blood?", ["A. Brain", "B. Liver", "C. Heart", "D. Kidney"], "C. Heart"),
     Question("Sun rises in the?", ["A. West", "B. North", "C. South", "D. East"], "D. East"),
     Question("Color of the sky?", "Blue"),
+    Question("5 x 5?", "25")
 ]
 
 @app.route("/")
