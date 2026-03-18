@@ -51,7 +51,7 @@ def result():
             "correct_answer": question.answer
         })
 
-    time_submitted = datetime.now()
+    time_submitted = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
     return render_template(
         "result.html",
