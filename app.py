@@ -21,7 +21,8 @@ questions = [
     Question("Water freezes at?", ["A. 0°C", "B. 10°C", "C. 50°C", "D. 100°C"], "A. 0°C"),
     Question("Which is a programming language?", ["A. HTML", "B. CSS", "C. Python", "D. HTTP"], "C. Python"),
     Question("Which organ pumps blood?", ["A. Brain", "B. Liver", "C. Heart", "D. Kidney"], "C. Heart"),
-    Question("Sun rises in the?", ["A. West", "B. North", "C. South", "D. East"], "D. East")
+    Question("Sun rises in the?", ["A. West", "B. North", "C. South", "D. East"], "D. East"),
+    Question("Color of the sky?", "Blue"),
 ]
 
 @app.route("/")
