@@ -1,17 +1,13 @@
 # This is a simple CBT Flask application
 # It displays questions and calculates score
 from flask import Flask, render_template, request
-from models import Question, CBT
-cbt = CBT()
-
-for q in Question:
-    cbt.add_question(q)
+from models import Question
 from datetime import datetime
 import random
 
 app = Flask(__name__)
 
-# List of all quiz questions (13 total)
+# List of questions
 questions = [
     Question("Capital of Nigeria?", ["A. Abuja", "B. Lagos", "C. Kano", "D. Ibadan"], "A. Abuja"),
     Question("2 + 2 = ?", ["A. 3", "B. 4", "C. 5", "D. 6"], "B. 4"),
@@ -29,21 +25,20 @@ questions = [
     Question("Which organ pumps blood?", ["A. Brain", "B. Liver", "C. Heart", "D. Kidney"], "C. Heart"),
     Question("Sun rises in the?", ["A. West", "B. North", "C. South", "D. East"], "D. East"),
     Question("Color of the sky?", ["A. Blue", "B. Red", "C. Green", "D. Yellow"], "A. Blue"),
-Question("5 x 5?", ["A. 20", "B. 25", "C. 30", "D. 15"], "B. 25"),
-Question("Which is an operating system?", ["A. Windows", "B. Google", "C. Facebook", "D. WhatsApp"], "A. Windows"),
+    Question("5 x 5?", ["A. 20", "B. 25", "C. 30", "D. 15"], "B. 25"),
+    Question("Which is an operating system?", ["A. Windows", "B. Google", "C. Facebook", "D. WhatsApp"], "A. Windows"),
 ]
-
 @app.route("/")
 def home():
-    shuffled_questions = questions.copy()
-    random.shuffle(shuffled_questions)
-    return render_template("index.html", questions=shuffled_questions)
+    random.shuffle(questions)
+    return render_template("index.html", questions=questions)
 
 @app.route("/result", methods=["POST"])
 def result():
     score = 0
     results = []
     
+    # Iterate through the questions and calculate the score
     for index, question in enumerate(questions):
         user_answer = request.form.get(f"q{index}")
 
@@ -56,6 +51,7 @@ def result():
             "correct_answer": question.answer
         })
 
+    # Record the time the quiz was submitted
     time_submitted = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
     return render_template(
@@ -68,4 +64,3 @@ def result():
 
 if __name__ == "__main__":
     app.run(debug=True)
-   
