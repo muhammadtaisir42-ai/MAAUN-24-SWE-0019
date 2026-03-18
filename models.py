@@ -6,5 +6,6 @@ class Question:
         self.options = options
         self.answer = answer
 
+
     def is_correct(self, choice):
         return choice == self.answer
