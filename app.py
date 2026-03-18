@@ -41,7 +41,7 @@ def result():
 
     for index, question in enumerate(questions):
         user_answer = request.form.get(f"q{index}")
-        
+
         if question.is_correct(user_answer):
             score += 1
 
@@ -63,3 +63,4 @@ def result():
 
 if __name__ == "__main__":
     app.run(debug=True)
+    print(user_answer)
