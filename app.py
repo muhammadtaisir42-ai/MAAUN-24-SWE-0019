@@ -32,7 +32,8 @@ Question("Which is an operating system?", ["A. Windows", "B. Google", "C. Facebo
 @app.route("/")
 def home():
     shuffled_questions = questions.copy()
-    return render_template("index.html", questions=questions)
+    random.shuffle(shuffled_questions)
+    return render_template("index.html", questions=shuffled_questions)
 
 @app.route("/result", methods=["POST"])
 def result():
