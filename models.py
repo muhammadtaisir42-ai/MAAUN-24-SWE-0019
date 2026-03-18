@@ -10,3 +10,12 @@ def get_next_question(self):
 
     def is_correct(self, choice):
         return choice == self.answer
+    class CBT:
+     def __init__(self):
+        self.questions = []
+
+    def add_question(self, question):
+        self.questions.append(question)
+
+    def get_next_question(self):
+        return self.questions.pop(0)  # FIFO

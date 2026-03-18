@@ -1,7 +1,11 @@
 # This is a simple CBT Flask application
 # It displays questions and calculates score
 from flask import Flask, render_template, request
-from models import Question
+from models import Question, CBT
+cbt = CBT()
+
+for q in Question:
+    cbt.add_question(q)
 from datetime import datetime
 import random
 
